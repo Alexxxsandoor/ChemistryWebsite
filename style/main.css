@@ -1,0 +1,17 @@
+@import 'header.css';
+@import 'left-bar.css';
+@import 'right-container.css';
+*{
+	margin: 0;
+	padding: 0;
+	font-family:'Courier New', Courier, monospace;
+	font-style: normal;
+	font-weight: normal;
+}
+body{
+	background: #EFEFEF;
+	height: 100%;
+}
+.container{
+	display: flex;
+}

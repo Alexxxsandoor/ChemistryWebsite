@@ -1,0 +1,31 @@
+.header{
+	background: #4AA8FF;
+	height: 60px;
+	/* height: 100vh; */
+	padding: 10px;
+	display: flex;
+	justify-content:space-between;
+	align-items:center;
+	border-bottom: 2px solid #FFB800;
+}
+.header__title{
+	font-size: 60px;
+	color: #ffffff;
+	margin-left: 10px;
+}
+.header__title span{
+	color: #FFB800;
+}
+.header__user-name{
+	font-size: 28px;
+	color: #ffffff;
+	display: flex;
+	align-items:center;
+	margin-right: 10px;
+}
+#lastname{
+	color: #FFB800;
+}
+#arrow_down{
+	height: 13px;
+}

@@ -1,0 +1,20 @@
+.container__left-bar{
+	background: #4AA8FF;
+	height: 91.2vh;
+	width: 100px;
+	display: flex;
+	flex-direction:column;
+	border-right:2px solid #FFB800;
+}
+.bar-block{
+	margin-top: 10px;
+	text-align: center;
+	color: #ffffff;	
+	width: 80px;
+}
+.bar-block:hover{
+	background: #FFB800;
+}
+.bar-block:active{
+	background: #ffffff;
+}
