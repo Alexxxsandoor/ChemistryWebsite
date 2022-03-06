@@ -37,9 +37,14 @@
 	background: #ffffff;
 	color: #000000;
 	position:absolute;
+	
 	top:65px;
 	right: -55px;
 	font-size: 23px;
 	padding: 30px;
 	border-radius: 0px 0px 30px 30px;
+}
+
+.user-info a{
+	color: #FFB800;
 }
