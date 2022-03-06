@@ -26,7 +26,7 @@ const user = [
 		password: "oiuqwehjhk@123123",
 		dateRegistration: "01/02/2021",
 		email: "ivibambi@gmail.com",
-		startCourse: "8",//!course: 7,8,9,10,11,DPA,ZNO
+		startCourse: 8,//!course: 7,8,9,10,11,DPA,ZNO
 		completedСourses: [
 			{ id: 8 }
 		],

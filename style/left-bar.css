@@ -11,7 +11,12 @@
 	margin-top: 10px;
 	text-align: center;
 	color: #ffffff;	
-	width: 90px;
+	width: 80px;
+	padding: 10px 0 10px 0;
+}
+.bar-block img{
+	width: 35px;
+	height: 35px;
 }
 .bar-block:hover{
 	background: #FFB800;
