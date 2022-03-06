@@ -13,8 +13,16 @@
 	<div class="header">
 		<div class="header__title"><span>Х</span>ІМІЯ</div>
 		<div class="header__user-name"><img src="image/header-user.png" alt="user">
-			<span id="lastname">Верстуков</span>Александр
-			<img id="arrow_down" src="image/arrow_down.png" alt="arrow_down">
+			<span id="lastname"></span><span id="firstname"></span>
+
+			<div class="user-info">
+				<p>Логин:alexxxsandoor</p>
+				<p>Телефон:+38(099)238-55-34</p>
+				<p>email:v.verstukov14@gmail.com</p>
+				<p>Курс: 7 класс</p>
+				<a href="">Личный кабинет</a>
+				<p></p>
+			</div>
 		</div>
 	</div>
 	<div class="container">
@@ -55,8 +63,101 @@
 					</button>
 				</div>
 			</div>
+			<div class="right-container__bottom-themes">
+				<div class="circle-progress">
+					<div class="circle-progress-center">
+						<h1>50%</h1>
+					</div>
+				</div>
+				<div class="center-info">
+					<h2>Хімія 7 клас</h2>
+					<p>Це старт. Тут ми освоїмо базові навички курсу з хімії.Це старт.
+						Тут ми освоїмо базові навички курсу з хімії.Це старт.
+						Тут ми освоїмо базові навички курсу з хімії.Це старт.
+						Тут ми освоїмо базові навички курсу з хімії.Це старт.
+						Тут ми освоїмо базові навички курсу з хімії.</p>
+					<p>Показати список тем <img id="arrow_down" src="image/black_arrow_down.png" alt="arrow_down"></p>
+				</div>
+				<div class="right-button">
+					<button>
+						<h3>Продовжити</h3>
+					</button>
+				</div>
+			</div>
+			<div class="right-container__bottom-themes">
+				<div class="circle-progress">
+					<div class="circle-progress-center">
+						<h1>50%</h1>
+					</div>
+				</div>
+				<div class="center-info">
+					<h2>Хімія 7 клас</h2>
+					<p>Це старт. Тут ми освоїмо базові навички курсу з хімії.Це старт.
+						Тут ми освоїмо базові навички курсу з хімії.Це старт.
+						Тут ми освоїмо базові навички курсу з хімії.Це старт.
+						Тут ми освоїмо базові навички курсу з хімії.Це старт.
+						Тут ми освоїмо базові навички курсу з хімії.</p>
+					<p>Показати список тем <img id="arrow_down" src="image/black_arrow_down.png" alt="arrow_down"></p>
+				</div>
+				<div class="right-button">
+					<button>
+						<h3>Продовжити</h3>
+					</button>
+				</div>
+			</div>
+			<div class="right-container__bottom-themes">
+				<div class="circle-progress">
+					<div class="circle-progress-center">
+						<h1>50%</h1>
+					</div>
+				</div>
+				<div class="center-info">
+					<h2>Хімія 7 клас</h2>
+					<p>Це старт. Тут ми освоїмо базові навички курсу з хімії.Це старт.
+						Тут ми освоїмо базові навички курсу з хімії.Це старт.
+						Тут ми освоїмо базові навички курсу з хімії.Це старт.
+						Тут ми освоїмо базові навички курсу з хімії.Це старт.
+						Тут ми освоїмо базові навички курсу з хімії.</p>
+					<p>Показати список тем <img id="arrow_down" src="image/black_arrow_down.png" alt="arrow_down"></p>
+				</div>
+				<div class="right-button">
+					<button>
+						<h3>Продовжити</h3>
+					</button>
+				</div>
+			</div>
+
+
 		</div>
+
 	</div>
+
+	<!-- jquery -->
+	<script src="jquery/jquery-1.7.2.min.js" type="text/javascript"></script>
+	<!-- easing plugin ( optional ) -->
+	<script src="jquery/easing.js" type="text/javascript"></script>
+	<!-- UItoTop plugin -->
+	<script src="jquery/jquery.ui.totop.js" type="text/javascript"></script>
+	<!-- Starting the plugin -->
+	<script type="text/javascript">
+		$(document).ready(function () {
+			/*
+			var defaults = {
+						 containerID: 'toTop', // fading element id
+				containerHoverID: 'toTopHover', // fading element hover id
+				scrollSpeed: 1200,
+				easingType: 'linear' 
+				 };
+			*/
+
+			$().UItoTop({ easingType: 'easeOutQuart' });
+
+		});
+	</script>
+
+
+
 </body>
+<script src="script/userName.js"></script>
 
 </html>

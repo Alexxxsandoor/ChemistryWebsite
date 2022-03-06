@@ -1,6 +1,8 @@
 @import 'header.css';
 @import 'left-bar.css';
 @import 'right-container.css';
+@import 'theme-class.css';
+@import 'ui.totop.css';
 *{
 	margin: 0;
 	padding: 0;

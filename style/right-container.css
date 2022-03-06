@@ -1,7 +1,7 @@
 .container__right-container{
 	flex-grow:1;
-	margin-left: 50px;
-	margin-top: 30px;
+	margin-left: 150px;
+	margin-top: 110px;
 }
 .right-container__top-themes{
 	display: flex;
@@ -36,64 +36,3 @@
 	color: #000000;
 }
 
-/* Темы по классу */
-
-.right-container__bottom-themes{
-	margin-top: 30px;
-	background: #ffffff;
-	width: 55%;
-	height: 27%;
-	border-radius: 30px;
-	padding: 30px;
-	display: flex;
-}
-.circle-progress{
-	background: #C4C4C4;
-	height: 200px;
-	width: 200px;
-	border-radius: 50%;
-	display:flex;
-	justify-content:center;
-	align-items:center;
-	background-image: linear-gradient(126deg, transparent 50%, #FFA800 50%), linear-gradient(90deg, #C4C4C4 50%, transparent 50%);
-}
-.circle-progress-center{
-	background: #ffffff;
-	height: 150px;
-	width: 150px;
-	border-radius: 50%;
-	display:flex;
-	justify-content:center;
-	align-items:center;
-}
-
-.center-info{
-	margin-left: 30px;
-	width: 60%;
-}
-
-.center-info p{
-	margin-top: 20px;	
-	font-size: 20px;
-}
-.right-button{	
-	margin-left: 30px;
-	display:flex;
-	justify-content:center;
-	align-items:center;
-}
-
-.right-button button{
-	background: #FFA800;
-	padding: 15px;
-	border-radius: 30px;
-	border: 0; 
-	color: #ffffff;
-}
-.right-button button:hover{
-	background: #B8B8B8;
-	color: #000000;
-}
-.right-button button:active{
-	background: #ffffff;
-}

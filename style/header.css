@@ -1,12 +1,14 @@
 .header{
 	background: #4AA8FF;
 	height: 60px;
+	width: 95vw;
 	/* height: 100vh; */
-	padding: 10px;
+	padding: 10px 100px 10px 10px;
 	display: flex;
 	justify-content:space-between;
 	align-items:center;
 	border-bottom: 2px solid #FFB800;
+	position: fixed;
 }
 .header__title{
 	font-size: 60px;
@@ -22,10 +24,22 @@
 	display: flex;
 	align-items:center;
 	margin-right: 10px;
+	position: relative;
 }
 #lastname{
 	color: #FFB800;
+	margin-right: 11px;
 }
 #arrow_down{
 	height: 13px;
+}
+.user-info{
+	background: #ffffff;
+	color: #000000;
+	position:absolute;
+	top:65px;
+	right: -55px;
+	font-size: 23px;
+	padding: 30px;
+	border-radius: 0px 0px 30px 30px;
 }

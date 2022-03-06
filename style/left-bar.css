@@ -1,7 +1,8 @@
 .container__left-bar{
 	background: #4AA8FF;
 	height: 91.2vh;
-	width: 100px;
+	margin-top: 82px;
+	position: fixed;
 	display: flex;
 	flex-direction:column;
 	border-right:2px solid #FFB800;
@@ -10,7 +11,7 @@
 	margin-top: 10px;
 	text-align: center;
 	color: #ffffff;	
-	width: 80px;
+	width: 90px;
 }
 .bar-block:hover{
 	background: #FFB800;
