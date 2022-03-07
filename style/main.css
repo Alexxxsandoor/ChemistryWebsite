@@ -4,6 +4,8 @@
 @import 'theme-class.css';
 @import 'ui.totop.css';
 @import 'scroll-line.css';
+@import 'window-leson.css';
+
 *{
 	margin: 0;
 	padding: 0;
@@ -14,7 +16,7 @@
 body{
 	background: #EFEFEF;
 	height: 100%;
-	
+	position: relative;
 }
 .container{
 	display: flex;

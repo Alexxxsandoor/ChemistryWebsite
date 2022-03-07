@@ -10,18 +10,20 @@
 }
 .circle-progress{
 	background: #C4C4C4;
-	height: 200px;
-	width: 200px;
+	height: 210px;
+	width: 210px;
 	border-radius: 50%;
 	display:flex;
 	justify-content:center;
 	align-items:center;
-	background-image: linear-gradient(126deg, transparent 50%, #FFA800 50%), linear-gradient(90deg, #C4C4C4 50%, transparent 50%);
+	
+	background: rgb(255,184,0);
+	background: radial-gradient(circle, rgba(255,184,0,1) 20%, rgba(255,255,255,1) 100%);
 }
 .circle-progress-center{
 	background: #ffffff;
-	height: 150px;
-	width: 150px;
+	height: 135px;
+	width: 135px;
 	border-radius: 50%;
 	display:flex;
 	justify-content:center;

@@ -1,0 +1,57 @@
+.window-leson{
+	background: #ffffff;
+	z-index: 0;
+	width: 1200px;
+	position: absolute;
+	top:105px;
+	left: 145px;
+	border-radius: 30px;
+	padding: 30px;
+	border: 2px solid #FFB800;
+}
+
+.window-leson button{
+	height: 40px;
+	width: 40px;
+	display: flex;
+}
+.video__title{
+	display: flex;
+	position: relative;
+}
+
+.video{
+	width:560px;
+	height:315px;
+	border: 2px solid #000000;
+	margin-right: 30px;
+}
+
+.right-info{
+	flex-grow:1;
+	width: 300px;
+}
+.right-info h2{
+	margin-bottom: 10px;
+	text-align: center;
+}
+.bottom-information{
+	margin-top: 30px;
+}
+.cross{
+	position: absolute;
+	top:-20px;
+	right: -20px;
+	height: 40px;
+	width: 40px;
+	border: 0;
+	background: none;
+}
+.cross:hover{
+	background: #FFB800;
+	border-radius: 30px;
+}
+.cross:active{
+	background: #ff0000;
+	border-radius: 30px;
+}

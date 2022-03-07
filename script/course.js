@@ -92,7 +92,8 @@ const course = [
 				]
 			}
 		]
-	}, {
+	},
+	{
 		id: 8,
 		title: "Хімія 8 клас",
 		info: "Це старт. Тут ми освоїмо базові навички курсу з хімії.",
@@ -271,7 +272,7 @@ const course = [
 				]
 			}
 		]
-	}
+	},
 ]
 
 const courseOutput = (course) => {
@@ -289,7 +290,7 @@ const courseOutput = (course) => {
 
 		const circleInCircle = document.createElement("div")
 		circleInCircle.className = "circle-progress-center"
-		circleInCircle.innerHTML = `<h1>50%</h1>`
+		circleInCircle.innerHTML = `<h1>20%</h1>`
 
 		divContainer.append(courseThemes)
 		courseThemes.append(circle)

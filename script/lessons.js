@@ -35,3 +35,9 @@ const lessonsOutput = (lessonsList) => {
 	}
 }
 lessonsOutput(lessons)
+
+const crossClose = () => {
+
+	const divWindow = document.querySelector(".window-leson")
+	divWindow.remove()
+}
