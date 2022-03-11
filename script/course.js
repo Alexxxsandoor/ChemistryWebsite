@@ -1,3 +1,4 @@
+//TODO сделать в БД поле для нижней информации
 const course = [
 	{
 		id: 7,
@@ -7,9 +8,9 @@ const course = [
 			{
 				id: 70,
 				title: "Вступление химии",
-				info: "",
+				info: "Какая-то краткая информация, Какая-то краткая информация,Какая-то краткая информация, Какая-то краткая информация,Какая-то краткая информация, Какая-то краткая информация,Какая-то краткая информация, Какая-то краткая информация,Какая-то краткая информация, Какая-то краткая информация,Какая-то краткая информация, Какая-то краткая информация,Какая-то краткая информация, Какая-то краткая информация,Какая-то краткая информация, Какая-то краткая информация,Какая-то краткая информация, Какая-то краткая информация,Какая-то краткая информация, Какая-то краткая информация,Какая-то краткая информация, Какая-то краткая информация,Какая-то краткая информация, Какая-то краткая информация,Какая-то краткая информация, Какая-то краткая информация,",
 				url: "",
-				video: "url",
+				video: "https://www.youtube.com/embed/7OU_HCiqBgw",
 				answers: [
 					{
 						id: 0,
@@ -40,9 +41,9 @@ const course = [
 			{
 				id: 71,
 				title: "2 занятие химии",
-				info: "",
+				info: "Какая-то краткая информация, Какая-то краткая информация,Какая-то краткая информация, Какая-то краткая информация,Какая-то краткая информация, Какая-то краткая информация,333333333333333333333333333333 Какая-то краткая информация, Какая-то краткая информация,333333333333333333333333333 3",
 				url: "",
-				video: "url",
+				video: "https://www.youtube.com/embed/EpBWOBo7-UU",
 				answers: [
 					{
 						id: 1,
@@ -60,9 +61,9 @@ const course = [
 			{
 				id: 72,
 				title: "3 занятие химии",
-				info: "",
+				info: "22222222222222222222Какая-то краткая информация, Какая-то краткая информация,222222222222222222222222Какая-то краткая информация, Какая-то краткая информация,22222222222222222222222222",
 				url: "",
-				video: "url",
+				video: "https://www.youtube.com/embed/GJN7hE5ijnI",
 				answers: [
 					{
 						id: 2,
@@ -101,9 +102,9 @@ const course = [
 			{
 				id: 70,
 				title: "Вступление химии",
-				info: "",
+				info: "Какая-то краткая информация, Какая-то краткая информация Какая- то краткая информация, Какая - то краткая информация",
 				url: "",
-				video: "url",
+				video: "",
 				answers: [
 					{
 						id: 0,
@@ -134,9 +135,9 @@ const course = [
 			{
 				id: 71,
 				title: "2 занятие химии",
-				info: "",
+				info: "222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222",
 				url: "",
-				video: "url",
+				video: "",
 				answers: [
 					{
 						id: 1,
@@ -154,9 +155,9 @@ const course = [
 			{
 				id: 72,
 				title: "3 занятие химии",
-				info: "",
+				info: "33333333333333333333333333333333333333333 rfrfz-nj byaf",
 				url: "",
-				video: "url",
+				video: "",
 				answers: [
 					{
 						id: 2,
@@ -189,7 +190,7 @@ const course = [
 				title: "Вступление химии",
 				info: "",
 				url: "",
-				video: "url",
+				video: "",
 				answers: [
 					{
 						id: 0,
@@ -222,7 +223,7 @@ const course = [
 				title: "2 занятие химии",
 				info: "",
 				url: "",
-				video: "url",
+				video: "",
 				answers: [
 					{
 						id: 1,
@@ -239,6 +240,187 @@ const course = [
 			},
 			{
 				id: 72,
+				title: "3 занятие химии",
+				info: "",
+				url: "",
+				video: "",
+				answers: [
+					{
+						id: 2,
+						type: "task",
+						question: "В 300грамм воды расстворили 15грамм соли, определите массовую доли растворённого вещества.",
+						given: [
+							{
+								type: "weight",
+								what: "H2O",
+								howMany: 300,
+							},
+							{
+								type: "weight",
+								what: "соли",
+								howMany: 15,
+							},
+						],
+						search: [
+							{
+								type: "percent",
+								what: "соли",
+							}
+						],
+						terms: "Решите задачку",
+						answer: 4.76,
+					},
+				]
+			}
+		]
+	},
+	{
+		id: 8,
+		title: "Хімія 9 клас",
+		info: "Це старт. Тут ми освоїмо базові навички курсу з хімії.",
+		themes: [
+			{
+				id: 70,
+				title: "Вступление химии",
+				info: "",
+				url: "",
+				video: "https://www.youtube.com/embed/7OU_HCiqBgw",
+				answers: [
+					{
+
+						id: 0,
+						type: "test",
+						question: "Химия изучает ...",
+						terms: "выберите 1 правильный ответ",
+						answer: [
+							{
+								id: 1,
+								answer: "...химию",
+							},
+							{
+								id: 0,
+								answer: "...биологию",
+							},
+							{
+								id: 0,
+								answer: "...физику",
+							},
+							{
+								id: 0,
+								answer: "...алгебру",
+							}
+						]
+					}
+				]
+			},
+			{
+				id: 71,
+				title: "2 занятие химии",
+				info: "",
+				url: "",
+				video: "https://www.youtube.com/embed/EpBWOBo7-UU",
+				answers: [
+					{
+						id: 1,
+						type: "equations",
+						question: "XO2+YH2->Z2O",
+						terms: "Введите правильные числа",
+						answer: [
+							x = 1,
+							y = 2,
+							z = 3,
+						]
+					}
+				]
+			},
+			{
+				id: 72,
+				title: "3 занятие химии",
+				info: "",
+				url: "",
+				video: "https://www.youtube.com/embed/GJN7hE5ijnI",
+				answers: [
+					{
+						id: 2,
+						type: "task",
+						question: "В 300грамм воды расстворили 15грамм соли, определите массовую доли растворённого вещества.",
+						given: [
+							{
+								type: "weight",
+								what: "H2O",
+								howMany: 300,
+							},
+							{
+								type: "weight",
+								what: "соли",
+								howMany: 15,
+							},
+						],
+						search: [
+							{
+								type: "percent",
+								what: "соли",
+							}
+						],
+						terms: "Решите задачку",
+						answer: 4.76,
+					},
+				]
+			}, {
+				id: 73,
+				title: "Вступление химии",
+				info: "",
+				url: "",
+				video: "https://www.youtube.com/embed/u5UVLmFl5G8",
+				answers: [
+					{
+						id: 0,
+						type: "test",
+						question: "Химия изучает ...",
+						terms: "выберите 1 правильный ответ",
+						answer: [
+							{
+								id: 1,
+								answer: "...химию",
+							},
+							{
+								id: 0,
+								answer: "...биологию",
+							},
+							{
+								id: 0,
+								answer: "...физику",
+							},
+							{
+								id: 0,
+								answer: "...алгебру",
+							}
+						]
+					}
+				]
+			},
+			{
+				id: 74,
+				title: "2 занятие химии",
+				info: "",
+				url: "",
+				video: "url",
+				answers: [
+					{
+						id: 1,
+						type: "equations",
+						question: "XO2+YH2->Z2O",
+						terms: "Введите правильные числа",
+						answer: [
+							x = 1,
+							y = 2,
+							z = 3,
+						]
+					}
+				]
+			},
+			{
+				id: 75,
 				title: "3 занятие химии",
 				info: "",
 				url: "",
@@ -273,8 +455,9 @@ const course = [
 			}
 		]
 	},
-]
 
+]
+//TODO сделать в БД поле для нижней информации
 const courseOutput = (course) => {
 
 	const divContainer = document.querySelector(".container__right-container")
@@ -310,8 +493,6 @@ const courseOutput = (course) => {
 
 		//вывод список тем 
 		const paragraph = document.createElement("p")
-		const imageBlackArrow = "<img id=arrow_down src=image/black_arrow_down.png alt=arrow_down>"
-		paragraph.innerHTML = "Показати список тем " + imageBlackArrow
 
 		courseThemes.append(centerInfo)
 		centerInfo.append(title)
@@ -324,19 +505,24 @@ const courseOutput = (course) => {
 		centerInfo.append(divLessonsThemes)
 
 		//блок для списка
-		const olList = document.createElement("ol")
+		const olList = document.createElement("details")
 		divLessonsThemes.append(olList)
 
 		//цикл для проверки количества тем
 		for (let j = 0; j < course[i].themes.length; j++) {
 
+			if (j < 1) {
+				const titleListItem = document.createElement("summary")
+				titleListItem.innerHTML = "Показати список тем"
+				olList.append(titleListItem)
+			}
 			//отдельная тема блок
-			const listItem = document.createElement("li")
+			const listItem = document.createElement("p")
 			olList.append(listItem)
 
 			//название темы и ссылка
 			const listItemLink = document.createElement("a")
-			listItemLink.setAttribute("href", course[i].themes[j].url)
+			listItemLink.setAttribute("onclick", `createWindow(${i},${j})`)
 			listItemLink.innerHTML = `Тема ${j + 1}:`
 			listItem.append(listItemLink)
 
@@ -357,5 +543,74 @@ const courseOutput = (course) => {
 	}
 
 }
-
 courseOutput(course);
+
+//функция для крестика закрыть окно урока
+const crossClose = () => {
+	const divWindow = document.querySelector(".window-leson")
+	if (divWindow) divWindow.remove()
+
+}
+
+//функция что бы создать окно удалив предыдущее окно если оно есть конечно
+const createWindow = (idCourse, idTheme) => {
+	crossClose()
+
+	const body = document.querySelector("body")
+
+	//создаем блок окна
+	const window = document.createElement("div")
+	window.className = "window-leson"
+
+	//закидываем просто в тело
+	body.append(window)
+
+	//верзний блок с видео, заголовком, инфой под заголовок и крестик
+	const videoTitle = document.createElement("div")
+	videoTitle.className = "video__title"
+	window.append(videoTitle)
+
+	//Если есть видос, создаем видео
+	if (course[idCourse].themes[idTheme].video) {
+		const iframe = document.createElement("iframe")
+		iframe.classList = "video"
+		iframe.setAttribute("src", course[idCourse].themes[idTheme].video)
+		iframe.setAttribute("title", "YouTube video player")
+		iframe.setAttribute("frameborder", 0)
+		iframe.setAttribute("allow", "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture")
+		iframe.setAttribute("allowfullscreen", '')
+		videoTitle.append(iframe)
+	}
+
+	//Правая информация блок
+	const rightInfo = document.createElement("div")
+	rightInfo.className = "right-info"
+	videoTitle.append(rightInfo)
+
+	//Заголовок
+	const rightInfoTitle = document.createElement("h2")
+	rightInfoTitle.innerHTML = `Тема ${idTheme + 1}: ${course[idCourse].themes[idTheme].title}`
+	rightInfo.append(rightInfoTitle)
+
+	//информация под заголовком
+	const rightInfoInfo = document.createElement("p")
+	rightInfoInfo.innerHTML = course[idCourse].themes[idTheme].info
+	rightInfo.append(rightInfoInfo)
+
+	//кнопка крестика
+	const button = document.createElement("button")
+	button.className = "cross"
+	button.innerHTML = "<img src=image/cross.png alt=cross>"
+	button.setAttribute("onclick", "crossClose()")
+	videoTitle.append(button)
+
+	//нижний блок для остальной информации
+	//TODO сделать в БД поле для нижней информации
+	const bottomInformation = document.createElement("div")
+	bottomInformation.className = "bottom-information"
+	bottomInformation.innerHTML = `<p>${course[idCourse].themes[idTheme].info}</p>`
+
+	window.append(bottomInformation)
+	//TODO сделать конструктор для тестов и вопросов
+	window.append()
+}

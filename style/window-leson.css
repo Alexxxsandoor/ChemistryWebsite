@@ -38,6 +38,10 @@
 .bottom-information{
 	margin-top: 30px;
 }
+.cross img{
+	height: 40px;
+	width: 40px;
+}
 .cross{
 	position: absolute;
 	top:-20px;
@@ -55,3 +59,4 @@
 	background: #ff0000;
 	border-radius: 30px;
 }
+

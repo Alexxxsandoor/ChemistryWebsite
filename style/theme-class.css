@@ -17,8 +17,7 @@
 	justify-content:center;
 	align-items:center;
 	
-	background: rgb(255,184,0);
-	background: radial-gradient(circle, rgba(255,184,0,1) 20%, rgba(255,255,255,1) 100%);
+	
 }
 .circle-progress-center{
 	background: #ffffff;
@@ -61,12 +60,13 @@
 	margin-top: 20px;
 	font-size: 20px;	
 }
-.lessons-themes li{
+.lessons-themes p{
 	border-bottom: 1px solid black;
 	display: flex;
 	justify-content:space-between;
 	align-items:center;
 	margin-top: 15px;
+	cursor: pointer;
 }
 .lessons-themes a{
 	text-decoration: none;
@@ -76,3 +76,4 @@
 	height: 25px;
 	width: 25px;
 }
+
