@@ -6,18 +6,23 @@
 @import 'scroll-line.css';
 @import 'window-leson.css';
 
-*{
+@import url('https://fonts.googleapis.com/css2?family=Mulish&display=swap');
+
+* {
 	margin: 0;
 	padding: 0;
-	font-family:'Courier New', Courier, monospace;
+	font-family: 'Mulish', sans-serif;
+	font-family: 'Nunito', sans-serif;
 	font-style: normal;
 	font-weight: normal;
 }
-body{
+
+body {
 	background: #EFEFEF;
 	height: 100%;
 	position: relative;
 }
-.container{
+
+.container {
 	display: flex;
 }

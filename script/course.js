@@ -1,4 +1,3 @@
-//TODO сделать в БД поле для нижней информации
 const course = [
 	{
 		id: 7,
@@ -35,6 +34,30 @@ const course = [
 								answer: "...алгебру",
 							}
 						]
+					},
+					{
+						id: 1,
+						type: "test",
+						question: "Химия изучает ...",
+						terms: "выберите 1 правильный ответ",
+						answer: [
+							{
+								id: 1,
+								answer: "...химию",
+							},
+							{
+								id: 0,
+								answer: "...биологию",
+							},
+							{
+								id: 0,
+								answer: "...физику",
+							},
+							{
+								id: 0,
+								answer: "...алгебру",
+							}
+						]
 					}
 				]
 			},
@@ -48,14 +71,79 @@ const course = [
 					{
 						id: 1,
 						type: "equations",
-						question: "XO2+YH2->Z2O",
+						question: "XO2+YH2->ZH2O",
 						terms: "Введите правильные числа",
+						answer: {
+							x: 1,
+							y: 2,
+							z: 3,
+						}
+					},
+					{
+						id: 0,
+						type: "test",
+						question: "Химия изучает ...",
+						terms: "выберите 1 правильный ответ",
 						answer: [
-							x = 1,
-							y = 2,
-							z = 3,
+							{
+								id: 1,
+								answer: "...химию",
+							},
+							{
+								id: 0,
+								answer: "...биологию",
+							},
+							{
+								id: 0,
+								answer: "...физику",
+							},
+							{
+								id: 0,
+								answer: "...алгебру",
+							}
 						]
-					}
+					},
+					{
+						id: 2,
+						type: "task",
+						question: "В 300грамм воды расстворили 15грамм соли, определите массовую доли растворённого вещества.",
+						given: [
+							{
+								type: "weight",
+								what: "H2O",
+								howMany: 300,
+							},
+							{
+								type: "weight",
+								what: "соли",
+								howMany: 15,
+							},
+
+						],
+						search: [
+							{
+								type: "percent",
+								what: "соли",
+							},
+							{
+								type: "weight",
+								what: "соли",
+							}
+						],
+						terms: "Решите задачку",
+						answer: 4.76,
+					},
+					{
+						id: 1,
+						type: "equations",
+						question: "XO2+YH2->ZH2O",
+						terms: "Введите правильные числа",
+						answer: {
+							x: 1,
+							y: 2,
+							z: 3,
+						}
+					},
 				]
 			},
 			{
@@ -80,10 +168,15 @@ const course = [
 								what: "соли",
 								howMany: 15,
 							},
+
 						],
 						search: [
 							{
 								type: "percent",
+								what: "соли",
+							},
+							{
+								type: "weight",
 								what: "соли",
 							}
 						],
@@ -455,9 +548,8 @@ const course = [
 			}
 		]
 	},
-
 ]
-//TODO сделать в БД поле для нижней информации
+
 const courseOutput = (course) => {
 
 	const divContainer = document.querySelector(".container__right-container")
@@ -549,7 +641,12 @@ courseOutput(course);
 const crossClose = () => {
 	const divWindow = document.querySelector(".window-leson")
 	if (divWindow) divWindow.remove()
+}
 
+//Удаление блока с тестом
+const testClose = () => {
+	const divTest = document.querySelector(".form-test")
+	if (divTest) divTest.remove()
 }
 
 //функция что бы создать окно удалив предыдущее окно если оно есть конечно
@@ -611,6 +708,166 @@ const createWindow = (idCourse, idTheme) => {
 	bottomInformation.innerHTML = `<p>${course[idCourse].themes[idTheme].info}</p>`
 
 	window.append(bottomInformation)
-	//TODO сделать конструктор для тестов и вопросов
-	window.append()
+
+	const testTitle = document.createElement("h2")
+	testTitle.innerHTML = "Тесты"
+
+	const testHr = document.createElement("hr")
+
+	window.append(testTitle)
+	window.append(testHr)
+
+	tests(idCourse, idTheme)
+
+
+}
+
+//генератор тестов
+const tests = (idCourse, idTheme) => {
+	testClose()
+
+	const window = document.querySelector(".window-leson")
+
+	const testList = document.createElement("form")
+	testList.className = "form-test"
+	window.append(testList)
+
+	//цикл для вопросов и ответов
+	for (let i = 0; i < course[idCourse].themes[idTheme].answers.length; i++) {
+
+		//вопросы
+		const testTitle = document.createElement("h2")
+		testTitle.innerHTML = `Тест ${i + 1}`
+
+		const testTerms = document.createElement("p")
+		testTerms.innerHTML = course[idCourse].themes[idTheme].answers[i].terms
+
+		const testQuestion = document.createElement("h3")
+		testQuestion.innerHTML = `${course[idCourse].themes[idTheme].answers[i].question}`
+
+		const hr = document.createElement("hr")
+
+		testList.append(testTitle)
+		testList.append(testTerms)
+		testList.append(testQuestion)
+
+		//цикл для ответов для типа тестов .type === "test"
+		if (course[idCourse].themes[idTheme].answers[i].type === "test") {
+
+			for (let j = 0; j < course[idCourse].themes[idTheme].answers[i].answer.length; j++) {
+
+				//Создаем параграф с инпутом для каждого варианта ответа
+				const paragraphInput = document.createElement("p")
+
+				const inputAnswer = document.createElement("input")
+				inputAnswer.setAttribute("type", "radio")
+				inputAnswer.setAttribute("name", `answer${i}`)
+				inputAnswer.setAttribute("id", `answer${i}`)
+
+				if (course[idCourse].themes[idTheme].answers[i].answer[j].id === 1) inputAnswer.setAttribute("class", `yes`)
+				else inputAnswer.setAttribute("class", `no`)
+
+				paragraphInput.append(inputAnswer)
+
+				//Сам ответ для каждого из инпутов с значением
+				const valueInput = document.createElement("label")
+				valueInput.setAttribute("for", `answer${i}`)
+				valueInput.innerHTML = course[idCourse].themes[idTheme].answers[i].answer[j].answer
+
+				paragraphInput.append(valueInput)
+				// загружаем в форму
+				testList.append(paragraphInput)
+			}
+		}
+
+		//цикл для ответов для типа тестов .type === "equations"
+		else if (course[idCourse].themes[idTheme].answers[i].type === "equations") {
+			for (var key in course[idCourse].themes[idTheme].answers[i].answer) {
+				const inputEquations = document.createElement("input")
+				inputEquations.setAttribute("type", "number")
+				inputEquations.setAttribute("class", `equations`)
+				inputEquations.setAttribute("placeholder", key)
+				inputEquations.setAttribute("min", 1)
+				inputEquations.setAttribute("max", 100)
+				testList.append(inputEquations)
+			}
+		}
+
+		//цикл для ответов для типа тестов .type === "task"
+		else {
+			const inputGiven = document.createElement("h3")
+			inputGiven.innerHTML = "Дано:"
+			inputGiven.style.marginTop = "20px";
+			inputGiven.style.marginBottom = "10px";
+			testList.append(inputGiven)
+
+			//цикл для полей что дает задача
+			for (let l = 0; l < course[idCourse].themes[idTheme].answers[i].given.length; l++) {
+				const given = document.createElement("p")
+				//в переменные значения для удобства
+				const what = course[idCourse].themes[idTheme].answers[i].given[l].what
+				const howMany = course[idCourse].themes[idTheme].answers[i].given[l].howMany
+				const type = course[idCourse].themes[idTheme].answers[i].given[l].type
+
+				//проверка на тип или вес, или проценты ну или моль
+				if (type === "weight") {
+					given.innerHTML = `${what}: ${howMany} г.`
+				}
+				else if (type === "percent") {
+					given.innerHTML = `${what}: ${howMany} %.`
+				}
+				else {
+					given.innerHTML = `${what}: ${howMany} моль`
+				}
+				testList.append(given)
+			}
+
+			const searchTask = document.createElement("h3")
+			searchTask.innerHTML = "Знайти:"
+			searchTask.style.marginTop = "20px";
+			searchTask.style.marginBottom = "10px";
+
+			testList.append(searchTask)
+
+			//цикл для полей что нужно найти
+			for (let h = 0; h < course[idCourse].themes[idTheme].answers[i].search.length; h++) {
+
+				search = document.createElement("p")
+
+				const type = course[idCourse].themes[idTheme].answers[i].search[h].type
+				const what = course[idCourse].themes[idTheme].answers[i].search[h].what
+
+				const inputGiven = document.createElement("input")
+				inputGiven.setAttribute("type", "number")
+				inputGiven.setAttribute("class", `task`)
+
+				//проверка на тип или вес, или проценты ну или моль
+				if (type === "weight") {
+					search.append(`г. ${what} `)
+				}
+				else if (type === "percent") {
+					search.append(`% ${what} `)
+				}
+				else {
+					search.append(`моль ${what} `)
+				}
+				testList.append(search)
+				search.append(inputGiven)
+
+			}
+		}
+		testList.append(hr)
+	}
+
+	//создаем кнопку в конце
+	const buttonSend = document.createElement("button")
+	buttonSend.className = "button-sumbit"
+	buttonSend.innerHTML = "Проверить"
+	buttonSend.setAttribute("onclick", `checkResult(${idCourse},${idTheme})`)
+	testList.append(buttonSend)
+}
+
+//!Проверка тест
+const checkResult = (idCourse, idTheme) => {
+	tests(idCourse, idTheme)
 }

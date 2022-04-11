@@ -36,7 +36,7 @@ const user = [
 	},
 ]
 
-const userId = 0;
+const userId = 1;
 
 const userOutput = (user, id) => {
 	const idLastName = document.querySelector("#lastname");
@@ -60,7 +60,5 @@ const userOutput = (user, id) => {
 	else userCourse.append(user[id].startCourse)
 
 }
-
-
 
 userOutput(user, userId)
