@@ -550,6 +550,7 @@ const course = [
 	},
 ]
 
+//Вывод всех курсов по химии
 const courseOutput = (course) => {
 
 	const divContainer = document.querySelector(".container__right-container")
@@ -637,20 +638,34 @@ const courseOutput = (course) => {
 }
 courseOutput(course);
 
+//удаление блоков с курсами
+const courseClose = () => {
+	const divСourse = document.querySelectorAll(".right-container__bottom-themes")
+	for (let i = 0; i < divСourse.length; i++) {
+		if (divСourse) divСourse[i].remove()
+	}
+}
+
 //функция для крестика закрыть окно урока
 const crossClose = () => {
 	const divWindow = document.querySelector(".window-leson")
 	if (divWindow) divWindow.remove()
+	courseClose()
+	courseOutput(course)
 }
 
 //Удаление блока с тестом
 const testClose = () => {
 	const divTest = document.querySelector(".form-test")
 	if (divTest) divTest.remove()
+	courseClose()
+
 }
 
 //функция что бы создать окно удалив предыдущее окно если оно есть конечно
 const createWindow = (idCourse, idTheme) => {
+	courseClose()
+
 	crossClose()
 
 	const body = document.querySelector("body")
@@ -712,10 +727,10 @@ const createWindow = (idCourse, idTheme) => {
 	const testTitle = document.createElement("h2")
 	testTitle.innerHTML = "Тесты"
 
-	const testHr = document.createElement("hr")
+
 
 	window.append(testTitle)
-	window.append(testHr)
+
 
 	tests(idCourse, idTheme)
 
@@ -737,7 +752,7 @@ const tests = (idCourse, idTheme) => {
 
 		//вопросы
 		const testTitle = document.createElement("h2")
-		testTitle.innerHTML = `Тест ${i + 1}`
+
 
 		const testTerms = document.createElement("p")
 		testTerms.innerHTML = course[idCourse].themes[idTheme].answers[i].terms
@@ -763,7 +778,6 @@ const tests = (idCourse, idTheme) => {
 				inputAnswer.setAttribute("type", "radio")
 				inputAnswer.setAttribute("name", `answer${i}`)
 				inputAnswer.setAttribute("id", `answer${i}`)
-
 				if (course[idCourse].themes[idTheme].answers[i].answer[j].id === 1) inputAnswer.setAttribute("class", `yes`)
 				else inputAnswer.setAttribute("class", `no`)
 
@@ -779,17 +793,24 @@ const tests = (idCourse, idTheme) => {
 				testList.append(paragraphInput)
 			}
 		}
-
 		//цикл для ответов для типа тестов .type === "equations"
 		else if (course[idCourse].themes[idTheme].answers[i].type === "equations") {
+			let e = 0;
 			for (var key in course[idCourse].themes[idTheme].answers[i].answer) {
 				const inputEquations = document.createElement("input")
 				inputEquations.setAttribute("type", "number")
 				inputEquations.setAttribute("class", `equations`)
+
+				const answerEquations = course[idCourse].themes[idTheme].answers[i].answer[key]
+
+				//для проверки в дальнейшем теста я добавил для айдишки 4 пунка, айди курса, айди темы, порядок теста и правильный ответ
+				inputEquations.setAttribute("id", `${i}${answerEquations}`)
 				inputEquations.setAttribute("placeholder", key)
 				inputEquations.setAttribute("min", 1)
 				inputEquations.setAttribute("max", 100)
+				inputEquations.setAttribute("max", 100)
 				testList.append(inputEquations)
+				e++;
 			}
 		}
 
@@ -837,9 +858,13 @@ const tests = (idCourse, idTheme) => {
 				const type = course[idCourse].themes[idTheme].answers[i].search[h].type
 				const what = course[idCourse].themes[idTheme].answers[i].search[h].what
 
+				const answer = course[idCourse].themes[idTheme].answers[i].answer
+
 				const inputGiven = document.createElement("input")
 				inputGiven.setAttribute("type", "number")
 				inputGiven.setAttribute("class", `task`)
+				inputGiven.setAttribute("id", answer)
+				inputGiven.setAttribute("step", `0.01`)
 
 				//проверка на тип или вес, или проценты ну или моль
 				if (type === "weight") {
@@ -867,7 +892,88 @@ const tests = (idCourse, idTheme) => {
 	testList.append(buttonSend)
 }
 
-//!Проверка тест
+//Проверка ответов
 const checkResult = (idCourse, idTheme) => {
-	tests(idCourse, idTheme)
+
+	const inputsTests = document.querySelectorAll(".yes")
+	const inputsEquations = document.querySelectorAll(".equations")
+	const inputsTask = document.querySelectorAll(".task")
+
+	const testLength = inputsTests.length + inputsEquations.length + inputsTask.length;
+
+	let trueAnswers = 0;
+
+	//проверка на правильность тестов
+	for (let i = 0; i < inputsTests.length; i++) {
+		if (inputsTests[i].checked === false) {
+			message(idCourse, idTheme, 0)
+			break
+		}
+		else trueAnswers++
+	}
+	//проверка на правильность уравнений
+
+	for (let i = 0; i < inputsEquations.length; i++) {
+		if (inputsEquations[i].value == inputsEquations[i].id[1]) trueAnswers++
+		else {
+			message(idCourse, idTheme, 0)
+			break
+		}
+	}
+	//проверка на правильность задач
+	for (let i = 0; i < inputsTask.length; i++) {
+		if (inputsTask[i].value == inputsTask[i].id) trueAnswers++
+		else {
+			message(idCourse, idTheme, 0)
+			break
+		}
+	}
+
+	if (trueAnswers == testLength) {
+		message(idCourse, idTheme, 1)
+	}
+}
+
+//Отправка сообщения о тестах
+const message = (idCourse, idTheme, type) => {
+	testClose()
+
+	const window = document.querySelector(".window-leson")
+
+	searchMessage = document.querySelector(".message")
+
+	const buttonCross = document.querySelector(".cross")
+
+	buttonCross.setAttribute("onclick", "")
+
+
+	if (!searchMessage) {
+		const message = document.createElement("h2")
+		message.className = "message"
+		message.style.marginTop = "30px"
+
+
+
+		if (type == 0) {
+			message.innerHTML = "У ваших відповідях є помилка, спробуйте ще раз!"
+			message.style.color = "#ff0000"
+			setTimeout(() => {
+				message.remove()
+				tests(idCourse, idTheme)
+				buttonCross.setAttribute("onclick", "crossClose()")
+			}, 4000);
+		}
+		else {
+			message.innerHTML = "Вітаємо! Усі відповіді правильні!"
+			message.style.color = "#00aa09"
+			setTimeout(() => {
+				buttonCross.setAttribute("onclick", "crossClose()")
+				crossClose()
+			}, 4000);
+		}
+		window.append(message)
+
+
+	}
+
 }

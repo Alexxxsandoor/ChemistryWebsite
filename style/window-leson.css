@@ -53,6 +53,7 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .window-leson button.button-sumbit:hover {
@@ -75,6 +76,7 @@
 	height: 315px;
 	border: 2px solid #000000;
 	margin-right: 30px;
+	box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .right-info {
@@ -103,7 +105,7 @@
 .equations,
 .task {
 	font-size: 20px;
-	width: 50px;
+	width: 80px;
 	margin-right: 20px;
 	padding: 5px;
 	user-select: none;
@@ -128,6 +130,8 @@
 	border: 0;
 	background: none;
 	user-select: none;
+	border-radius: 50%;
+	box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .cross:hover {
@@ -138,4 +142,12 @@
 .cross:active {
 	background: #ff0000;
 	border-radius: 30px;
+}
+
+.form-test {
+	border: 2px solid #FFB800;
+	border-radius: 20px;
+	box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+	padding: 30px 20px;
+	background: #EFEFEF;
 }
