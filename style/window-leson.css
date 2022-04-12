@@ -12,6 +12,11 @@
 
 }
 
+.window-leson h3 {
+	margin: 10px 0;
+
+}
+
 
 
 .window-leson button {
@@ -111,8 +116,13 @@
 	user-select: none;
 }
 
-.task {
-	margin: 10px 0;
+.task,
+.equations {
+	margin: 10px;
+	border: 0;
+	border-bottom: 2px solid #FFB800;
+	background: none;
+	cursor: pointer;
 }
 
 
