@@ -11,6 +11,18 @@
 	box-shadow: 3px 0px 3px rgb(0 0 0 / 25%);
 }
 
+@keyframes theme {
+	0% {
+		left: -1400px;
+
+	}
+
+	100% {
+		left: 0px;
+		position: block;
+	}
+}
+
 .bar-block {
 	margin-top: 10px;
 	text-align: center;

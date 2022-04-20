@@ -9,7 +9,23 @@
 	padding: 30px;
 	border: 2px solid #FFB800;
 	box-shadow: 4px 8px 8px rgb(0 0 0 / 40%);
+	z-index: -1;
+	animation-name: window-leson;
+	animation-duration: 0.5s;
+	animation-timing-function: ease;
+}
 
+@keyframes window-leson {
+	0% {
+
+		left: -1400px;
+
+	}
+
+	100% {
+		left: 145px;
+
+	}
 }
 
 .window-leson h3 {

@@ -2,6 +2,26 @@
 	flex-grow: 1;
 	margin-left: 150px;
 	margin-top: 110px;
+
+	position: absolute;
+	animation-name: theme;
+	animation-duration: 1s;
+	z-index: -1;
+}
+
+
+@keyframes theme {
+	0% {
+		left: -1400px;
+		top: -100px;
+	}
+
+	100% {
+		left: 0;
+		top: 0px;
+	}
+
+
 }
 
 .right-container__top-themes {

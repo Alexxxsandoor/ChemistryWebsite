@@ -1339,6 +1339,9 @@ const courseOutput = (course) => {
 		const courseThemes = document.createElement("div")
 		courseThemes.className = "right-container__bottom-themes"
 
+
+
+
 		// круг прогресса
 		const circle = document.createElement("div")
 		circle.className = "circle-progress"
@@ -1506,7 +1509,19 @@ const createLesson = (idCourse, idTheme) => {
 	tests(idCourse, idTheme)
 
 
+	goUp()
 }
+
+
+var timeOut;
+function goUp() {
+	var top = Math.max(document.body.scrollTop, document.documentElement.scrollTop);
+	if (top > 0) {
+		window.scrollBy(0, -100);
+		timeOut = setTimeout('goUp()', 20);
+	} else clearTimeout(timeOut);
+}
+
 //Удаление блока с тестом
 const testClose = () => {
 	const divTest = document.querySelector(".form-test")
