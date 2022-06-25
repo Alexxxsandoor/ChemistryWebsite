@@ -1,0 +1,51 @@
+.login-div {
+	display: flex;
+	flex-direction: column;
+	margin-left: 35vw;
+	margin-top: 30vh;
+	border: 2px solid #FFB800;
+	border-radius: 30px;
+	padding: 30px;
+	width: 500px;
+	background: rgb(2, 0, 36);
+	background: linear-gradient(279deg, rgba(2, 0, 36, 1) 0%, rgba(9, 66, 121, 1) 26%, rgba(0, 212, 255, 1) 100%);
+	color: white;
+	box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.25);
+}
+
+.login-div h2 {
+	text-align: center;
+	border-bottom: 2px solid #FFB800;
+}
+
+.login-div input {
+	margin-top: 20px;
+	padding: 10px;
+	border-radius: 30px;
+	border: 2px solid #FFB800;
+	box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.button-log-reg {
+	display: flex;
+	justify-content: space-around;
+	margin-top: 30px;
+}
+
+.button-log-reg button {
+	padding: 10px 20px;
+	border-radius: 30px;
+	cursor: pointer;
+	border: 2px solid #FFB800;
+	box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.button-log-reg button:hover {
+	background: #d6d6d6;
+
+}
+
+.button-log-reg button:active {
+	background: #000000;
+	color: white;
+}

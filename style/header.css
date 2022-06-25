@@ -47,7 +47,8 @@
 	background: #ffffff;
 	color: #000000;
 	position: absolute;
-
+	flex-direction: column;
+	display: none;
 	top: 64.5px;
 	right: -55px;
 	font-size: 23px;

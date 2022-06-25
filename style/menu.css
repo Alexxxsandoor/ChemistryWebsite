@@ -1,0 +1,27 @@
+.rightMenu {
+	position: absolute;
+
+	display: flex;
+	flex-direction: column;
+
+	width: 350px;
+	background: white;
+	border: 2px solid #FFB800;
+	padding: 30px;
+	border-radius: 30px;
+	top: 100px;
+	right: 20px;
+	box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.rightMenu h3 {
+	margin-top: 10px;
+
+}
+
+.themeList {
+	margin-top: 5px;
+	font-size: 18px;
+	cursor: pointer;
+	color: rgb(0, 0, 0);
+}

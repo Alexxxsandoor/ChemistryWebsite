@@ -29,8 +29,8 @@
 
 .circle-progress {
 	background: #C4C4C4;
-	height: 210px;
-	width: 210px;
+	height: 170px;
+	width: 170px;
 	border-radius: 50%;
 	display: flex;
 	justify-content: center;

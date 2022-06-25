@@ -177,3 +177,22 @@
 	padding: 30px 20px;
 	background: #EFEFEF;
 }
+
+.buttons-next-back {
+	display: flex;
+	justify-content: space-between;
+	padding: 0 20px;
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+
+.buttons-next-back button {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 0px 60px;
+	background: #000000;
+	border-radius: 30px;
+	font-size: 18px;
+	color: #EFEFEF;
+}

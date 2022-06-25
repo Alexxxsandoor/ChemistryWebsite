@@ -1,20 +1,16 @@
 const user = [
 	{
 		id: "0",
-		firstName: "Александр",
+		firstName: "Олександр",
 		lastName: "Верстуков",
 		dateOfBirth: "08/05/2000",
 		phone: "+380992385534",
-		login: "Alexxxsandoor",
-		password: "qwerty12345",
+		login: "1",
+		password: "1",
 		dateRegistration: "06/03/2022",
 		email: "v.verstukov14@gmail.com",
-		startCourse: 7,//!course: 7,8,9,10,11,DPA,ZNO
-		completedСourses: [],
-		completedThemes: [
-			{ id: 70 },
-			{ id: 71 },
-		],
+		startCourse: 7,
+
 	},
 	{
 		id: "1",
@@ -26,17 +22,10 @@ const user = [
 		password: "oiuqwehjhk@123123",
 		dateRegistration: "01/02/2021",
 		email: "ivibambi@gmail.com",
-		startCourse: 8,//!course: 7,8,9,10,11,DPA,ZNO
-		completedСourses: [
-			{ id: 8 }
-		],
-		completedThemes: [
-			{ id: 80 },
-		],
+		startCourse: 8,
 	},
 ]
 
-const userId = 1;
 
 const userOutput = (user, id) => {
 	const idLastName = document.querySelector("#lastname");
@@ -60,5 +49,95 @@ const userOutput = (user, id) => {
 	else userCourse.append(user[id].startCourse)
 
 }
+var userI = 0;
+function userinfo() {
 
-userOutput(user, userId)
+	const user = document.querySelector(".user-info")
+
+	if (userI == 0) {
+		user.style.display = "flex"
+		userI++
+	} else {
+		user.style.display = "none"
+		userI--
+	}
+}
+
+function closeLoginDiv() {
+
+	const loginDiv = document.querySelector(".login-div")
+
+	if (loginDiv) loginDiv.remove()
+
+}
+
+
+function comeIn(user) {
+
+	const login = document.querySelector(".inputLogin").value
+
+	const password = document.querySelector(".inputPassword").value
+
+
+	for (let i = 0; i < user.length; i++) {
+		if (user[i].login == login && user[i].password == password) {
+			courseOutput(course)
+			closeLoginDiv()
+			userOutput(user, i)
+		}
+	}
+
+
+}
+
+function login() {
+
+	const containerDiv = document.querySelector(".container")
+
+	const loginDiv = document.querySelector(".login-div")
+	if (loginDiv) loginDiv.remove()
+	else {
+		const headerUser = document.createElement("div")
+		headerUser.className = "login-div"
+
+		headerUser.innerHTML = "<h2>Увійти до системи</h2>"
+
+
+
+		const inputLogin = document.createElement("input")
+		inputLogin.setAttribute("placeholder", "Логін")
+		inputLogin.setAttribute("type", "login")
+		inputLogin.className = "inputLogin"
+
+		const inputPassword = document.createElement("input")
+		inputPassword.setAttribute("placeholder", "Пароль")
+		inputPassword.setAttribute("type", "password")
+		inputPassword.className = "inputPassword"
+
+		headerUser.append(inputLogin)
+		headerUser.append(inputPassword)
+
+		const buttonDiv = document.createElement("div")
+		buttonDiv.className = "button-log-reg"
+
+		const buttonLogin = document.createElement("button")
+		buttonLogin.innerHTML = "Увійти"
+		buttonLogin.setAttribute("onclick", "comeIn(user)")
+
+		buttonDiv.append(buttonLogin)
+
+
+		headerUser.append(buttonDiv)
+
+
+
+		containerDiv.append(headerUser)
+	}
+
+
+}
+
+login()
+
+
+
