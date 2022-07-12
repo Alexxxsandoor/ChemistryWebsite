@@ -1,4 +1,7 @@
 # ChemistryWebsite
+## [Demo](https://alexxxsandoor.github.io/ChemistryWebsite/) 
+login: 1 pasword: 1
+
 Information site for teaching chemistry with practical tasks
 
 eng
