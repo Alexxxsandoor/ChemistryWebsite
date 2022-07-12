@@ -8,7 +8,7 @@ const user = [
 		login: "1",
 		password: "1",
 		dateRegistration: "06/03/2022",
-		email: "v.verstukov14@gmail.com",
+		email: "asdasd@asd.com",
 		startCourse: 7,
 
 	},
